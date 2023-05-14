@@ -10,7 +10,9 @@ app.use(cors({
 
 app.get('/', (req, res) => {
   console.log(req.ip);
-  res.send(req.ip);
+  res.send({
+    ip: req.ip,
+  });
 })
 
 app.listen(3000, () => {
