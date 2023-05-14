@@ -16,7 +16,10 @@ app.use(cors({
 app.get('/get-ip', (req, res) => {
   console.log(req.ip);
   res.status(200);
-  res.send("Your IP address is " + req.ip);
+  res.send({
+    ip: req.ip,
+    ips: req.headers['x-forwarded-for']
+  });
 })
 
 app.listen(3000, () => {
