@@ -13,8 +13,9 @@ app.use(cors({
   origin: '*'
 }));
 
-app.get('/', (req, res) => {
+app.get('/get-ip', (req, res) => {
   console.log(req.ip);
+  res.status(200);
   res.send("Your IP address is " + req.ip);
 })
 
