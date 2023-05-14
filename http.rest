@@ -1,0 +1,2 @@
+GET https://get-ip-address-rho.vercel.app/
+Content-Type: application/json

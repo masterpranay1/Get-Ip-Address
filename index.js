@@ -4,15 +4,18 @@ const app = express();
 
 app.set('trust proxy', true)
 
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+
 app.use(cors({
   origin: '*'
 }));
 
 app.get('/', (req, res) => {
   console.log(req.ip);
-  res.send({
-    ip: req.ip,
-  });
+  res.send("Your IP address is " + req.ip);
 })
 
 app.listen(3000, () => {
